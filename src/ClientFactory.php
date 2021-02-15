@@ -50,8 +50,8 @@ class ClientFactory
      */
     public function instance(): Client
     {
-        return $this->cache->remember(Client::class, Carbon::now()->addMinutes(static::CACHE_MINUTES), function () {
+        // return $this->cache->remember(Client::class, Carbon::now()->addMinutes(static::CACHE_MINUTES), function () {
             return $this->app->make(Client::class);
-        });
+        // });
     }
 }
