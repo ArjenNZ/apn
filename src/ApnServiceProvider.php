@@ -18,6 +18,7 @@ class ApnServiceProvider extends ServiceProvider
     {
         $this->app->bind(Token::class, function ($app) {
             $options = Arr::except($app['config']['broadcasting.connections.apn'], 'production');
+            
 
             return Token::create($options);
         });
