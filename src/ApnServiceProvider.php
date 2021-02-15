@@ -23,6 +23,7 @@ class ApnServiceProvider extends ServiceProvider
         });
 
         $this->app->bind(Client::class, function ($app) {
+            dump('yo');
             return new Client($app->make(Token::class), $app['config']['broadcasting.connections.apn.production'], [CURLOPT_SSL_VERIFYPEER => false]);
         });
     }
