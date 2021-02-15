@@ -23,7 +23,7 @@ class ApnServiceProvider extends ServiceProvider
         });
 
         $this->app->bind(Client::class, function ($app) {
-            return new Client($app->make(Token::class), $app['config']['broadcasting.connections.apn.production'], [CURLOPT_CAINFO => 'GeoTrust_Global_CA.pem']);
+            return new Client($app->make(Token::class), $app['config']['broadcasting.connections.apn.production'], [CURLOPT_CAINFO => base_path('GeoTrust_Global_CA.pem')]);
         });
     }
 }
